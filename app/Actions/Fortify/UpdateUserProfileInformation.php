@@ -69,7 +69,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email' => $input['email'],
             'programme_id' => $input['programme_id'],
             'date_naissance' => $input['date_naissance'],
-            'sex' => $input
+            'sex' => $input['sex'],
             'poids' => $input['poids'],
             'taille' => $input['taille'],
             'telephone' => $input['telephone'],
