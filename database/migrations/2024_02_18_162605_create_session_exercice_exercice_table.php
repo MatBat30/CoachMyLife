@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('exercise_session_exercice', function (Blueprint $table) {
+        Schema::create('session_exercice_exercice', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('session_exercice_id')->constrained()->onDelete('cascade');
-            $table->foreignId('exercise_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('exercise_session_exercice');
+        Schema::dropIfExists('session_exercice_exercice');
     }
 };
