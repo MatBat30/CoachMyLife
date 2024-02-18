@@ -17,7 +17,12 @@ class ProgrammeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->unique()->randomElement([
+                'Perdre du poids',
+                'Remise en forme',
+                'Prise de masse',
+                'Vivre mieux'
+            ]),
         ];
     }
 }
