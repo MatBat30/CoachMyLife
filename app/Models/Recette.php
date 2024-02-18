@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Recette extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name', 'temps_preparation', 'glucides', 'proteines', 'lipides', 'description', 'menu_id', 'image','ingredients','conseils_consomation'];
+
+    public function menu() {
+        return $this->belongsTo(Menu::class);
+    }
 }
+

@@ -14,14 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Programme::factory(10)->create();
-
-        $programmesIds = Programme::all()->pluck('id')->toArray();
-
-        User::factory(10)->create()->each(function ($user) use ($programmesIds) {
-            $user->programme_id = $this->faker->randomElement($programmesIds);
-            $user->save();
-        });
-
+        //
     }
 }

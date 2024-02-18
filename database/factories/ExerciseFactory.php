@@ -17,9 +17,7 @@ class ExerciseFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->unique()->word,
-            'description' => $this->faker->sentence,
-            'duree' => $this->faker->numberBetween(1, 60),
+            //
         ];
     }
 }

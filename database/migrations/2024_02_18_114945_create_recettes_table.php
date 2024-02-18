@@ -13,8 +13,19 @@ return new class extends Migration
     {
         Schema::create('recettes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('menu_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->integer('temps_preparation');
+            $table->decimal('glucides', 8, 2);
+            $table->decimal('proteines', 8, 2);
+            $table->decimal('lipides', 8, 2);
+            $table->string('image');
+            $table->text('ingredients');
+            $table->text('conseils_consomation');
+            $table->text('description');
             $table->timestamps();
         });
+
     }
 
     /**

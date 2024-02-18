@@ -51,6 +51,37 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    protected static function booted()
+    {
+        static::saved(function ($user) use ($tachesQuotidiennes) {
+            // Vérifie si 'programme_id' est défini ou modifié
+            if ($user->isDirty('programme_id')) {
+                // Supposons que la liste des tâches soit fixe pour chaque programme
+                $TacheQuotidienne = [
+                    'faire 3 séries de 10 pompes',
+                    'courir pendant 15 minutes',
+                    'ne pas manger de sucrerie',
+                    'ne pas grignoter entre les repas',
+                    'faire 3 séries de 15 squats',
+                    'me coucher avant minuit',
+                    'ne pas manger de friture',
+                    'boire 1,5L d\'eau',
+                    'eviter les boissons sucres',
+                    'dormir 8h par nuit',
+                    'ne pas manger de gras le soir'
+                ];
+
+                foreach ($tachesQuotidiennes as $tache) {
+                    TacheQuotidienne::create([
+                        'user_id' => $user->id,
+                        'nom' => $tache,
+                        'status' => 0, // Par défaut, la tâche est incomplète
+                    ]);
+                }
+            }
+        });
+    }
+
 
     public function programme()
     {

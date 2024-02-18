@@ -19,5 +19,8 @@ class ProgrammeSeeder extends Seeder
             ['nom' => 'Prise de masse'],
             ['nom' => 'Vivre mieux'],
         ]);
+        for ($i = 0; $i < 10; $i++) {
+            \App\Models\User::factory()->create();
+        }
     }
 }

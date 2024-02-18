@@ -17,10 +17,7 @@ class SessionExerciceFactory extends Factory
     public function definition(): array
     {
         return [
-            'programme_id' => Programme::factory(), // Crée un nouveau Programme pour chaque SessionExercice ou utilisez Programme::inRandomOrder()->first()->id pour une référence existante
-            'name' => $this->faker->sentence,
-            'description' => $this->faker->sentence,
-            'duree' => $this->faker->numberBetween(1, 60),
+            //
         ];
     }
 }

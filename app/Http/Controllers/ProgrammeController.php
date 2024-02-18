@@ -63,4 +63,36 @@ class ProgrammeController extends Controller
     {
         //
     }
+
+    public function assignerProgramme(Request $request, $userId)
+    {
+        $programmeId = $request->input('programme_id');
+        $user = User::find($userId);
+        $user->programme_id = $programmeId;
+        $user->save();
+
+        // Sélectionner 7 sessions aléatoires parmi les 28
+        $sessionsIds = SessionExercice::inRandomOrder()->take(7)->pluck('id');
+
+        // Attribuer ces sessions au programme de l'utilisateur
+        foreach ($sessionsIds as $sessionId) {
+            DB::table('programme_session')->insert([
+                'programme_id' => $programmeId,
+                'session_exercice_id' => $sessionId,
+            ]);
+
+            // Sélectionner aléatoirement 5 exercices pour chaque session
+            $exercicesIds = Exercice::inRandomOrder()->take(5)->pluck('id');
+
+            // Attribuer les exercices à la session
+            foreach ($exercicesIds as $exerciceId) {
+                DB::table('session_exercice_exercice')->insert([
+                    'session_exercice_id' => $sessionId,
+                    'exercice_id' => $exerciceId,
+                ]);
+            }
+        }
+
+        return response()->json(['message' => 'Programme et sessions avec exercices attribués avec succès.']);
+    }
 }

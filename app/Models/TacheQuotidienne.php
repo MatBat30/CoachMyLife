@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class TacheQuotidienne extends Model
 {
-    use HasFactory;
+    protected $fillable = ['user_id', 'nom', 'status'];
 
-    public function user()
-    {
+    public function user() {
         return $this->belongsTo(User::class);
     }
 }

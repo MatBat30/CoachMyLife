@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Programme extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
 
     public function users() {
         return $this->hasMany(User::class);
+    }
+    public function menus() {
+        return $this->hasMany(Menu::class);
     }
 }
