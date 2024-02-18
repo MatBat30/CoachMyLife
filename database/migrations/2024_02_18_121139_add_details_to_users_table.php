@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedBigInteger('programme_id')->nullable()->after('password');
             $table->foreign('programme_id')->references('id')->on('programmes');
             $table->date('date_naissance')->nullable()->after('programme_id');
-            $table->string('sex', 10)->nullable()->after('age');
+            $table->string('sex', 10)->nullable()->after('date_naissance');
             $table->float('poids')->nullable()->after('sex');
             $table->integer('taille')->nullable()->after('poids');
             $table->string('telephone')->nullable()->after('taille');
