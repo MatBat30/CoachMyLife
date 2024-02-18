@@ -9,10 +9,11 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/fortify": "^1.20",
         "laravel/framework": "^10.10",
-        "laravel/passport": "^11.10",
+        "laravel/passport": "*",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "laravel/ui": "^4.4"
+        "laravel/ui": "^4.4",
+        "ext-http": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

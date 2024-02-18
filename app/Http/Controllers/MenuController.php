@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Http\Requests\StoreMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
+use http\Client\Request;
 
 class MenuController extends Controller
 {
@@ -27,9 +28,9 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMenuRequest $request)
+    public function store(Request $request)
     {
-        //
+       //
     }
 
     /**
@@ -37,8 +38,9 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        //
+//
     }
+
 
     /**
      * Show the form for editing the specified resource.

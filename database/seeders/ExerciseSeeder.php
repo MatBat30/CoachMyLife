@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-class ExerciseSeeder extends Seeder
+class ExerciceSeeder extends Seeder
 {
 
     /**
@@ -13,7 +13,7 @@ class ExerciseSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('exercises')->insert([
+        DB::table('Exercices')->insert([
             ['nom' => 'Push-ups'],
             ['nom' => 'Pull-ups'],
             ['nom' => 'Squats'],

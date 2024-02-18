@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Exercise;
+use App\Models\Exercice;
 use App\Http\Requests\StoreExerciseRequest;
 use App\Http\Requests\UpdateExerciseRequest;
 
@@ -35,7 +35,7 @@ class ExerciseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Exercise $exercise)
+    public function show(Exercice $exercise)
     {
         //
     }
@@ -43,7 +43,7 @@ class ExerciseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Exercise $exercise)
+    public function edit(Exercice $exercise)
     {
         //
     }
@@ -51,7 +51,7 @@ class ExerciseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateExerciseRequest $request, Exercise $exercise)
+    public function update(UpdateExerciseRequest $request, Exercice $exercise)
     {
         //
     }
@@ -59,7 +59,7 @@ class ExerciseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Exercise $exercise)
+    public function destroy(Exercice $exercise)
     {
         //
     }

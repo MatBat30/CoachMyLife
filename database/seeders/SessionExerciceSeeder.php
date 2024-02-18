@@ -13,7 +13,7 @@ class SessionExerciceSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('exercises')->insert([
+        DB::table('Exercices')->insert([
             ['nom' => 'sessions 1'],
             ['nom' => 'sessions 2'],
             ['nom' => 'sessions 3'],
