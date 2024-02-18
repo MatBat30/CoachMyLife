@@ -14,7 +14,7 @@ use App\Http\Controllers\User\ProfileController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('/home');
 });
 
 Auth::routes();
@@ -25,4 +25,3 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
