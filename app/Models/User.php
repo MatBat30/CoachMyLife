@@ -51,12 +51,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    protected static function booted()
+    protected static function booted(): void
     {
-        static::saved(function ($user) use ($tachesQuotidiennes) {
-            // Vérifie si 'programme_id' est défini ou modifié
+        static::saved(function ($user) {
             if ($user->isDirty('programme_id')) {
-                // Supposons que la liste des tâches soit fixe pour chaque programme
                 $TacheQuotidienne = [
                     'faire 3 séries de 10 pompes',
                     'courir pendant 15 minutes',
@@ -71,11 +69,11 @@ class User extends Authenticatable
                     'ne pas manger de gras le soir'
                 ];
 
-                foreach ($tachesQuotidiennes as $tache) {
+                foreach ($TacheQuotidienne as $tache) {
                     TacheQuotidienne::create([
                         'user_id' => $user->id,
                         'nom' => $tache,
-                        'status' => 0, // Par défaut, la tâche est incomplète
+                        'status' => 0,
                     ]);
                 }
             }
